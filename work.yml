@@ -1,0 +1,30 @@
+---
+
+- hosts: ubuntu-server
+  become: true 
+  tasks:
+
+  - name: install apache2 package
+    apt:
+     name: apache2
+     state: latest
+
+  - name: add php support for apache
+    apt:
+     name: libapache2-mod-php
+     state: latest
+
+
+-  hosts: centos-server
+   become: true
+   tasks:
+
+   - name: install apache2 package
+     yum:
+      name: httpd
+      state: latest
+
+   - name: add php support for apache
+     yum:
+      name: php
+      state: latest
