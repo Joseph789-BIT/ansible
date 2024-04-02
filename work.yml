@@ -13,7 +13,8 @@
     apt:
      name: libapache2-mod-php
      state: latest
-
+   
+  - name:
 
 -  hosts: centos
    become: true
