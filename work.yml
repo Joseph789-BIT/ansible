@@ -15,6 +15,11 @@
       package:
         name: git
         state: present
+    
+    - name: Remove existing directory
+      file:
+       path: /var/www/html
+       state: absent
 
     - name: add php support for apache
       package:
