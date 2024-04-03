@@ -34,11 +34,16 @@
         force: yes
 
 
-  handlers:
-    - name: restart web server
+    - name: Restart web server if changes were made
       service:
         name: apache2
         state: restarted
+      notify: deploy_finished  # Notify handlers only if the service was restarted
+
+  handlers:
+    - name: deploy_finished
+      debug:
+        msg: "Website deployment finished successfully"
 
       
 
@@ -59,7 +64,6 @@
        path: /var/www/html
        state: absent
     
-
     - name: Clone github repository
       git:
         repo: https://github.com/Joseph789-BIT/Assignment3.git
@@ -81,9 +85,15 @@
         name: httpd
         enabled: yes
 
-    - name: restart web server
+    - name: Restart web server if changes were made
       service:
         name: httpd
         state: restarted
+      notify: deploy_finished  # Notify handlers only if the service was restarted
+
+  handlers:
+    - name: deploy_finished
+      debug:
+        msg: "Website deployment finished successfully"
 
   
