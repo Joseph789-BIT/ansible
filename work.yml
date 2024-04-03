@@ -35,10 +35,10 @@
 
     - name: Copy website files
       copy:
-        src: /var/ww/html/'assignment'/index.html
+        src: /var/ww/html/'assignment 3'/index.html
         dest: /var/www/html
-      notify:
-        - restart web server
+        notify:
+          - restart web server
 
   handlers:
     - name: restart web server
