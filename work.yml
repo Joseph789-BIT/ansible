@@ -81,7 +81,7 @@
         name: httpd
         enabled: yes
 
-    handlers:
+  handlers:
     - name: restart web server
       service:
         name: httpd
