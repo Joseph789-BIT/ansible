@@ -17,9 +17,9 @@
         state: present
 
     - name: add php support for apache
-     apt:
-      name: libapache2-mod-php
-      state: latest
+      package:
+       name: libapache2-mod-php
+       state: latest
     
 
     - name: Clone github repository
