@@ -54,6 +54,18 @@
        name: httpd
        state: latest
 
+    - name: Remove existing directory
+      file:
+       path: /var/www/html/
+       state: absent
+    
+
+    - name: Clone github repository
+      git:
+        repo: https://github.com/Joseph789-BIT/Assignment3.git
+        dest: /var/www/html/
+        force: yes
+
     - name: Start Apache 
       service:
         name: httpd
@@ -69,10 +81,10 @@
         name: httpd
         enabled: yes
 
-    - name: Clone github repository
-      git:
-        repo: https://github.com/Joseph789-BIT/Assignment3.git
-        dest: /var/www/html/
-        force: yes
-      
+    handlers:
+    - name: restart web server
+      service:
+        name: httpd
+        state: restarted
+
   
