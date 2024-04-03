@@ -33,10 +33,6 @@
         dest: /var/www/html
         force: yes
 
-    - name: Replace index.html
-      copy:
-        src: /var/www/html/'assignment 3'/index.html
-        dest: /var/www/html/'ässignment 3'
 
       
 
