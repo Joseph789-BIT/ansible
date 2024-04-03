@@ -46,7 +46,7 @@
   become: true
   vars:
     github_repo_url: https://github.com/Joseph789-BIT/Assignment3.git
-    destination_path: /var/www/html/
+    destination_path: /var/www/html
   tasks:
   
     - name: Install Apache
@@ -56,14 +56,14 @@
 
     - name: Remove existing directory
       file:
-       path: /var/www/html/
+       path: /var/www/html
        state: absent
     
 
     - name: Clone github repository
       git:
         repo: https://github.com/Joseph789-BIT/Assignment3.git
-        dest: /var/www/html/
+        dest: /var/www/html
         force: yes
 
     - name: Start Apache 
@@ -81,7 +81,6 @@
         name: httpd
         enabled: yes
 
-  handlers:
     - name: restart web server
       service:
         name: httpd
