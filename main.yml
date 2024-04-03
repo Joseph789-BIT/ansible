@@ -79,6 +79,7 @@
       service:
         name: httpd
         state: started 
+      when: "'httpd' not in ansible_facts.services"
 
     - name: Enable Apache
       service:
