@@ -2,7 +2,7 @@
 - hosts: ubuntu
   become: true
   vars:
-    github_repo_url: https://github.com/Joseph789-BIT/Assignment-3.git
+    github_repo_url: https://github.com/Joseph789-BIT/Assignment3.git
     destination_path: /var/www/html/dan/
   tasks:
 
@@ -24,7 +24,7 @@
 
     - name: Clone github repository
       git:
-        repo: https://github.com/Joseph789-BIT/Assignment-3.git
+        repo: https://github.com/Joseph789-BIT/Assignment3.git
         dest: /var/www/html/dan/
         force: yes
 
@@ -38,7 +38,7 @@
 - hosts: centos
   become: true
   vars:
-    github_repo_url: https://github.com/Joseph789-BIT/Assignment-3.git
+    github_repo_url: https://github.com/Joseph789-BIT/Assignment3.git
     destination_path: /var/www/html/
   tasks:
   
@@ -64,7 +64,7 @@
 
     - name: Clone github repository
       git:
-        repo: https://github.com/Joseph789-BIT/Assignment-3.git
+        repo: https://github.com/Joseph789-BIT/Assignment3.git
         dest: /var/www/html/
         force: yes
       
