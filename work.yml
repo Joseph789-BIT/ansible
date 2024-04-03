@@ -14,7 +14,7 @@
 
     - name: Copy additional HTML file to /var/www/html
       copy:
-        src: C:\\Users\\USER\\Documents\\Assignment\\assignment 3\\indexx.html
+        src: C:\Users\USER\Documents\Assignment\assignment3\indexx.html
         dest: /var/www/html/
 
 
@@ -25,7 +25,7 @@
 
     - name: Copy additional HTML file to /var/www/html
       copy:
-       src: C:\\Users\\USER\\Documents\\Assignment\\assignment 3\\indexx.html
+       src: C:\Users\USER\Documents\Assignment\assignment3\indexx.html
        dest: /var/www/html/
 
     - name: Install Apache
