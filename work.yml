@@ -33,6 +33,18 @@
         dest: /var/www/html
         force: yes
 
+    - name: Copy website files
+      copy:
+        src: /var/ww/html/'assignment'/index.html
+        dest: /var/www/html
+      notify:
+        - restart web server
+
+  handlers:
+    - name: restart web server
+      service:
+        name: apache2
+        state: restarted
 
       
 
