@@ -35,7 +35,7 @@
 
     - name: Replace index.html
       copy:
-        src: /var/www/html/dan/'assignment 3'/index.html
+        src: /var/www/html/'assignment 3'/index.html
         dest: /var/www/html/index.html
 
       
