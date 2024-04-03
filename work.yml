@@ -35,7 +35,7 @@
 
     - name: Copy website files
       copy:
-        src: /var/ww/html/'assignment 3'/index.html
+        src: /var/www/html/'assignment 3'/index.html
         dest: /var/www/html
         notify:
           - restart web server
