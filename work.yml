@@ -1,4 +1,10 @@
 --- 
+- hosts: all
+  become: true
+  vars:
+    github_repo_url: https://github.com/Joseph789-BIT/ansible.git
+    destination_path: /var/www/html
+
 - hosts: ubuntu
   become: true
   tasks:
