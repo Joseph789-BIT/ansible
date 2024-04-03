@@ -51,7 +51,7 @@
   become: true
   vars:
     github_repo_url: https://github.com/Joseph789-BIT/Assignment3.git
-    destination_path: /var/www/html
+    destination_path: /var/www/html/
   tasks:
   
     - name: Install Apache
@@ -67,7 +67,7 @@
     - name: Clone github repository
       git:
         repo: https://github.com/Joseph789-BIT/Assignment3.git
-        dest: /var/www/html
+        dest: /var/www/html/
         force: yes
 
     - name: Install git
