@@ -1,6 +1,9 @@
 --- 
 - hosts: ubuntu
   become: true
+  vars:
+    github_repo_url: https://github.com/Joseph789-BIT/Assignment-3.git
+    destination_path: /var/www/html  
   tasks:
 
     - name: Install Apache
@@ -13,6 +16,18 @@
         name: git
         state: present
 
+    - name: add php support for apache
+     apt:
+      name: libapache2-mod-php
+      state: latest
+    
+
+    - name: Clone github repository
+      git:
+        repo: https://github.com/Joseph789-BIT/Assignment-3.git
+        dest: /var/www/html
+        force: yes
+      
 
 - hosts: centos
   become: true
