@@ -12,13 +12,13 @@
 
   - name: Start Apache for centos
       service:
-        name: "{{ Apache_service_name }}"
+        name: httpd
         state: started
       when: ansible_distribution == 'centos'
 
   - name: Enable Apache for centos
       service:
-        name: "{{  }}"
+        name: httpd
         enabled: yes
       when: ansible_distribution == 'centos'    
   
