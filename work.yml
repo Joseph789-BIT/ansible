@@ -9,15 +9,20 @@
         - centos
         - apache
       package: 
-        name: apache2
+        name: 
+         - apache2
+         - httpd
         state: latest
 
     - name: Start Apache for centos
       service:
         name: httpd
-        state: started
+        state: started 
+        when: ansible_distribution == 'centos'
 
     - name: Enable Apache for centos
       service:
         name: httpd
         enabled: yes
+        when: ansible_distribution == 'centos'
+  
