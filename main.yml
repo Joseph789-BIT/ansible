@@ -21,10 +21,7 @@
        path: /var/www/html
        state: absent
 
-    - name: add php support for apache
-      package:
-       name: libapache2-mod-php
-       state: latest
+
     
 
     - name: Clone github repository
@@ -32,6 +29,17 @@
         repo: https://github.com/Joseph789-BIT/Assignment3.git
         dest: /var/www/html
         force: yes
+
+    - name: add php support for apache
+      package:
+        name: libapache2-mod-php
+        state: latest
+
+    - name: Start Apache on Ubuntu
+      service:
+        name: apache2
+        state: started
+
 
 
     - name: Restart web server if changes were made
@@ -72,7 +80,7 @@
 
 
     - name: Install git
-      package:
+      yum:
         name: git
         state: present
 
