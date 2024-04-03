@@ -12,7 +12,7 @@
 
   - name: add php support for apache (ubuntu and centos)
     tag: ubuntu,centos
-     name_items: "{{libapache2-mod-php,httpd}}"
+     name: libapache2-mod-php and httpd
      state: latest
       
   - name: Start Apache for centos
