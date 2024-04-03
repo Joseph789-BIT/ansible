@@ -70,6 +70,7 @@
         dest: /var/www/html/
         force: yes
 
+
     - name: Install git
       package:
         name: git
@@ -88,7 +89,7 @@
     - name: Restart web server if changes were made
       service:
         name: httpd
-        state: restart
+        state: restarted
       notify: deploy_finished  # Notify handlers only if the service was restarted
 
   handlers:
