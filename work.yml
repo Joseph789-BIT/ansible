@@ -1,25 +1,20 @@
 ---
-
 - hosts: all
-  become: true 
+  become: true
   tasks:
 
-  - name: install apache2 package (ubuntu and centos)
-    tag: ubuntu,centos,apache
-    package: 
-     name: apache2
-     state: latest
+    - name: Install apache2 package (ubuntu and centos)
+      tag: ubuntu,centos,apache
+      package: 
+        name: apache2
+        state: latest
 
-  - name: Start Apache for centos
+    - name: Start Apache for centos
       service:
         name: httpd
         state: started
 
-  - name: Enable Apache for centos
+    - name: Enable Apache for centos
       service:
         name: httpd
         enabled: yes
-    
-  
-
-
