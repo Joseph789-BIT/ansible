@@ -4,7 +4,10 @@
   tasks:
 
     - name: Install apache2 package (ubuntu and centos)
-      tag: ubuntu,centos,apache
+      tags: 
+        - ubuntu
+        - centos
+        - apache
       package: 
         name: apache2
         state: latest
