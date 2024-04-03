@@ -1,21 +1,36 @@
 ---
-- hosts: all
+- hosts: ubuntu
   become: true
   tasks:
 
-    - name: Install Apache (Ubuntu and CentOS)
-      tags: ubuntu,centos,apache
+    - name: Install Apache
       package:
-        name: apache2 and httpd
-        state: present
+        name: apache2 
+        state: latest
 
-    - name: Start Apache for centos
+
+- hosts: centos
+  become: true
+  tasks:
+
+
+    - name: Install Apache
+      yum:
+       name: httpd
+       state: latest
+
+    - name: add php support for apache
+      yum:
+       name: php
+       state: latest
+
+    - name: Start Apache 
       service:
         name: httpd
         state: started 
         when: ansible_distribution == 'centos'
 
-    - name: Enable Apache for centos
+    - name: Enable Apache
       service:
         name: httpd
         enabled: yes
