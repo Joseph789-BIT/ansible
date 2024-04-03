@@ -69,8 +69,6 @@
         repo: https://github.com/Joseph789-BIT/Assignment3.git
         dest: /var/www/html/
         force: yes
-      notify:
-        - restart web server
 
     - name: Install git
       package:
@@ -90,7 +88,7 @@
     - name: Restart web server if changes were made
       service:
         name: httpd
-        state: restarted
+        state: restart
       notify: deploy_finished  # Notify handlers only if the service was restarted
 
   handlers:
