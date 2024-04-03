@@ -43,7 +43,7 @@
 
     - name: Clone github repository
       git:
-        repo: https://github.com/Joseph789-BIT/Assignment-3/blob/main/assignment%203/index.html
+        repo: https://github.com/Joseph789-BIT/Assignment-3/assignment 3/index.html
         dest: /var/www/html
         force: yes
       
