@@ -66,15 +66,15 @@
         dest: /var/www/html
         force: yes
 
-    - name: Start Apache 
-      service:
-        name: httpd
-        state: started 
-
     - name: Install git
       package:
         name: git
         state: present
+
+    - name: Start Apache 
+      service:
+        name: httpd
+        state: started 
 
     - name: Enable Apache
       service:
