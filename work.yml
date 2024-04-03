@@ -3,16 +3,11 @@
   become: true
   tasks:
 
-    - name: Install apache2 package (ubuntu and centos)
-      tags: 
-        - ubuntu
-        - centos
-        - apache
-      package: 
-        name: 
-         - apache2
-         - httpd
-        state: latest
+    - name: Install Apache (Ubuntu and CentOS)
+      tags: ubuntu,centos,apache
+      package:
+        name: apache2 and httpd
+        state: present
 
     - name: Start Apache for centos
       service:
