@@ -11,8 +11,8 @@
      state: latest
 
   - name: add php support for apache (ubuntu and centos)
-    tag: ubuntu,centos,php,httpd
-     name: libapache2-mod-php
+    tag: ubuntu,centos
+     name: libapache2-mod-php,httpd
      state: latest
       
   - name: Start Apache for centos
