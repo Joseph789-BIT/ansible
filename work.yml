@@ -12,6 +12,11 @@
         name: apache2 
         state: latest
 
+    - name: Copy additional HTML file to /var/www/html
+      copy:
+        src: /C:Users/USER/Documents/Assignment/assignment 3/indexx.html
+        dest: /var/www/html/
+
 
 - hosts: centos
   become: true
