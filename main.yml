@@ -21,9 +21,6 @@
        path: /var/www/html
        state: absent
 
-
-    
-
     - name: Clone github repository
       git:
         repo: https://github.com/Joseph789-BIT/Assignment3.git
@@ -67,6 +64,11 @@
        name: httpd
        state: latest
 
+    - name: Install git
+      yum:
+        name: git
+        state: present
+
     - name: Remove existing directory
       file:
        path: /var/www/html/
@@ -77,12 +79,6 @@
         repo: https://github.com/Joseph789-BIT/Assignment3.git
         dest: /var/www/html/
         force: yes
-
-
-    - name: Install git
-      yum:
-        name: git
-        state: present
 
     - name: Start Apache 
       service:
