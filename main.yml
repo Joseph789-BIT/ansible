@@ -1,6 +1,6 @@
 ---
 
-- hosts: ubuntu, centos
+- hosts: all(ubuntu, centos)
   name: Deploy website from Github
   become: true
   vars: 
@@ -11,12 +11,12 @@
    - name: Install git
      package:
        name: git
-       status: present
+       state: present
 
    - name: Remove existing directory
      file:
        path: /var/www/html
-       status: absent
+       state: absent
 
    - name: Clone Github repository
      git:
