@@ -5,7 +5,7 @@
   become: true
   vars: 
     githud_repo_url: https://github.com/Joseph789-BIT/Assignment3.git
-    destination_path: "/var/www/html"
+    destination_path: /var/www/html
 
   tasks: 
    - name: Install git
@@ -15,13 +15,13 @@
 
    - name: Remove existing directory
      file:
-       path: "/var/www/html"
+       path: /var/www/html
        status: absent
 
    - name: Clone Github repository
      git:
        repo: https://github.com/Joseph789-BIT/Assignment3.git
-       dest: "/var/www/html"
+       dest: /var/www/html
        version: main
      register: git_clone_result
 
