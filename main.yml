@@ -1,7 +1,7 @@
 ---
 
-- name: Deploy website from Github
-  hosts: ubuntu, centos
+- hosts: ubuntu, centos
+  name: Deploy website from Github
   become: true
   vars: 
     githud_repo_url: https://github.com/Joseph789-BIT/Assignment3.git
