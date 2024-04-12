@@ -1,6 +1,6 @@
 ---
 
-- hosts: all(ubuntu, centos)
+- hosts: ubuntu, centos
   name: Deploy website from Github
   become: true
   vars: 
